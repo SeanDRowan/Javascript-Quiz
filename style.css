@@ -2,24 +2,15 @@
     padding: 0;
     margin: 0;
     font-family: "Poppins", sans-serif;
+    
   }
   body {
     background-color: #7786f5;
+    display:flex;
+    justify-content: center;
+    margin-top: 400px;
   }
-  .wrapper {
-    position: absolute;
-    width: 90%;
-    max-width: 37em;
-    background-color: #ffffff;
-    padding: 7em 3em;
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    text-align: center;
-    border-radius: 1em;
-  }
-  .controls-container {
+  .container {
     background-color: #7786f5;
     position: absolute;
     width: 100%;
@@ -38,40 +29,37 @@
     outline: none;
     border-radius: 2em;
     cursor: pointer;
+    
   }
-  #letter-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8em 0.4em;
-    justify-content: center;
-    margin-top: 2em;
+  .button-grid {
+   border-color: #2532f0;
+   border-radius: 20px;
+   border-style: dotted;
+   justify-content: center;
+   align-items: center;
+    background-color: #bb8f2f;
+    padding: 50px;
+
   }
-  #letter-container button {
-    background-color: #ffffff;
-    border: 2px solid #7786f5;
-    color: #7786f5;
+ 
+  #question {
+    font-size: 1.2em;
+    padding: 1em 3em;
+    background-color: #e01a1a;
+    border: none;
     outline: none;
-    border-radius: 0.3em;
-    cursor: pointer;
-    height: 3em;
-    width: 3em;
+    border-radius: 2em;
   }
-  #letter-container .correct {
-    background-color: #008000;
-    color: #ffffff;
-    border: 2px solid #008000;
+  #answer-buttons {
+    font-size: 1.2em;
+    padding: 1em 3em;
+    background-color: #d31414;
+    border: none;
+    outline: none;
+    border-radius: 2em;
   }
-  #letter-container .incorrect {
-    background-color: #8a8686;
-    color: #ffffff;
-    border: 2px solid #8a8686;
-  }
-  .hint-ref {
-    margin-bottom: 1em;
-  }
-  .hint-ref span {
-    font-weight: 600;
-  }
+ 
+  
   #chanceCount {
     margin: 1em 0;
     position: absolute;

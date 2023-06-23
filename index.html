@@ -12,9 +12,21 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="quiz"></div>
+  <div class ='container'>
+    <div id="question-container" class="hide">
+      <div id="question">question</div>
+      <div id="answer-buttons" class="button-grid">
+        <button class="btn">1</button>
+        <button class="btn">2</button>
+        <button class="btn">3</button>
+        <button class="btn">4</button>
+      </div>
+    </div>
+    <div class ='controls'>
       <button id="start">Start</button>
-      <div id="results"></div>
+      <button id="next" class="hide">Next</button>
+    </div>
+  </div>
     <!-- Script -->
     <script src="script.js"></script>
   </body>
