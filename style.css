@@ -31,6 +31,9 @@
     cursor: pointer;
     
   }
+  .correct{
+    background-color: #09f157;
+  }
   .button-grid {
    border-color: #2532f0;
    border-radius: 20px;
@@ -76,21 +79,20 @@
   border-radius: 2em;
   
  }
+ #score{
+  position: absolute;
+  padding: 300px;
+  font-size: 1.2em;
+  color: rgb(14, 2, 2);
+  padding: 1em 3em;
+  background-color: #3ceedf;
+  border: #cc15ae;
+  border-style: dotted;
   
-  #chanceCount {
-    margin: 1em 0;
-    position: absolute;
-    top: 0.62em;
-    right: 2em;
-  }
-  #word {
-    font-weight: 600;
-    margin: 1em 0 2em 0;
-  }
-  #word span {
-    text-transform: uppercase;
-    font-weight: 400;
-  }
+ } 
+
+
+  
   .hide {
     display: none;
   }

@@ -5,6 +5,10 @@ const questionContainerE =document.getElementById('question-container')
 const questionE = document.getElementById('question')
 const answerButtonsE = document.getElementById('answer-buttons')
 var timerEl = document.getElementById('timer')
+var scoreBoardEl = document.getElementById('score')
+var intialsEl = document.getElementById('initials')
+var userScore = 0;
+var timeLeft = 30;
 const questions = [
   {
     question:'question1',
@@ -18,8 +22,8 @@ const questions = [
   {
     question:'question2',
     answers:[
-      {text:'answer choice5',correct:true},
-      {text:'answer choice6',correct:false},
+      {text:'answer choice5',correct:false},
+      {text:'answer choice6',correct:true},
       {text:'answer choice7',correct:false},
       {text:'answer choice8',correct:false}
     ]
@@ -54,11 +58,7 @@ function startQuiz(){
   
 }
 
-    
-function scoreBoard(){}
-
 function countDown(){
-    var timeLeft = 30;
     var timeInterval = setInterval(function () {
      
      if ( timeLeft > 1 ){ 
@@ -68,38 +68,43 @@ function countDown(){
       else if ( timeLeft == 1 ){
         timerEl.textContent= timeLeft +" second"
         timeLeft--;
-      }
+      } 
         else{
           timerEl.textContent =""
           clearInterval(timeInterval);
-          displayMessage();
+          scoreBoard()
         }
     },1000);
 }
 
 
 function nextQuestion(){
+  if (currentquestionIndex == 4 || timeLeft < 1){
+    scoreBoard()
+  }else{
   resetState()
   showquestion(questions[currentquestionIndex])
   currentquestionIndex++;
-}
+}}
 
 function selectAnswer(event){
 const userChoice = event.target
-const correct = userChoice.dataset.correct
+const correct = userChoice.classList.contains('correct')
+checkAnswer(correct)
 if (userChoice){
-  next.classList.remove('hide')
-  checkAnswer(userChoice)
+  nextQuestion()
+}
 }
 
-}
-
-function showquestion(question){
+function showquestion(question){ 
 questionE.innerText= question.question
 question.answers.forEach(answer => {
 const button= document.createElement('button')
 button.innerText= answer.text  
 button.classList.add('btn')
+if (answer.correct){
+  button.classList.add('correct')
+}
 answerButtonsE.append(button)
 button.addEventListener('click',selectAnswer)
 });
@@ -111,12 +116,25 @@ function resetState(){
     answerButtonsE.removeChild(answerButtonsE.firstChild)
   }
 }
-function checkAnswer(){ 
+function checkAnswer(correct){ 
     if(correct){
-    alert('correct')
+    userScore = userScore + 5;
+  }else{
+    userScore--;
+    timeLeft = timeLeft-5;
   }
+}
 
-  
+function scoreBoard(){
+  timeLeft = 0;
+  questionContainerE.classList.add('hide')
+  var input = document.createElement("INPUT");
+  input.setAttribute("type","text")
+  input.setAttribute("value","Player Name")
+scoreBoardEl.innerText = "Your score is "+ userScore + " points, please input your name     "
+scoreBoardEl.append(input)
+
+
 }
 
 start.addEventListener( "click", startQuiz)
