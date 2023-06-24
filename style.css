@@ -41,7 +41,14 @@
     padding: 50px;
 
   }
- 
+ #next {
+  margin-top: 200px;
+  font-size: 1.2em;
+  padding: 1em 3em;
+  background-color: #cc15ae;
+  border-radius: 2em;
+  cursor: pointer;
+ }
   #question {
     font-size: 1.2em;
     padding: 1em 3em;
@@ -58,7 +65,17 @@
     outline: none;
     border-radius: 2em;
   }
- 
+ #timer {
+  position:relative;
+  top:-200px;
+  right:-300px;
+  font-size: 1.2em;
+  color: aliceblue;
+  padding: 1em 3em;
+  background-color: #09f157;
+  border-radius: 2em;
+  
+ }
   
   #chanceCount {
     margin: 1em 0;
