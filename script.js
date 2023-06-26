@@ -7,8 +7,13 @@ const answerButtonsE = document.getElementById('answer-buttons')
 var timerEl = document.getElementById('timer')
 var scoreBoardEl = document.getElementById('score')
 var intialsEl = document.getElementById('initials')
-var userScore = 0;
-var timeLeft = 30;
+var Player = document.getElementById('PlayerNames')
+var playerInput = document.querySelector('#Name')
+let userScore = 0;
+let timeLeft = 30;
+var input = document.createElement("INPUT");
+input.setAttribute("type","text")
+input.setAttribute("value","PlayerName")
 const questions = [
   {
     question:'question1',
@@ -126,17 +131,32 @@ function checkAnswer(correct){
 }
 
 function scoreBoard(){
-  timeLeft = 0;
-  questionContainerE.classList.add('hide')
-  var input = document.createElement("INPUT");
-  input.setAttribute("type","text")
-  input.setAttribute("value","Player Name")
+  scoreBoardEl.classList.remove('hide')
+timeLeft = 0;
+questionContainerE.classList.add('hide')
+next.classList.remove('hide')
 scoreBoardEl.innerText = "Your score is "+ userScore + " points, please input your name     "
-scoreBoardEl.append(input)
-
-
+scoreBoardEl.append(Player)
+next.addEventListener('click',recordScore)
+}
+function recordScore(){
+  const node = document.createElement('li');
+Player.appendChild(node)
+node.append(playerInput.value + " scored "+ userScore+ " points!")
+localStorage.setItem("PlayerName", node)
+console.log(playerInput.value)
+console.log(node)
+next.removeEventListener('click',recordScore)
+next.innerText = 'Restart'
+next.addEventListener('click',Restart)
 }
 
+function Restart(){
+  userScore = 0;
+  timeLeft = 30;
+  currentquestionIndex =0;
+  next.classList.add('hide')
+  scoreBoardEl.classList.add('hide')
+  startQuiz()
+}
 start.addEventListener( "click", startQuiz)
-next.addEventListener('click',nextQuestion)
-
