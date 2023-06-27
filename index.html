@@ -13,7 +13,14 @@
   </head>
   <body>
   <div class ='container'>
+    <p id = 'instructions'>Test your Javacript Knowledge! <br>
+      When "start" is selected, you'll have 30 seconds to answer the questions. <br>
+      Correct answers will get you 5 points each. <br>
+      Wrong answers will cost 1 point and 5 seconds from the Timer. <br>
+      Your total score is calculated from your points + time remaining!
+    </p>
     <div id ="timer">Time</div>
+    <!--main container for questions and answerchoices-->
     <div id="question-container" class="hide">
       <div id="question">question</div>
       <div id="answer-buttons" class="button-grid">
@@ -23,11 +30,15 @@
         <button class="btn">4</button>
       </div>
     </div>
+    <!--buttons for starting the quiz and submiting scores-->
     <div class ='controls'>
       <button id="start">Start</button>
-      <button id="next" class="hide">Next</button>
+      <button id="next" class="hide">Submit</button>
     </div>
   </div>
+  <!--Tags to display/hide as needed-->
+  <div id = Right class =hide>Right!</div>
+  <div id = Wrong class = hide>Wrong!</div>
   <div id ='score' class="hide"></div>
   <ul id="PlayerNames">
    <input type="text" name="PlayerNames" id="Name" placeholder="Player" />

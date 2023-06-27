@@ -5,13 +5,12 @@
     
   }
   body {
-    background-color: #7786f5;
     display:flex;
     justify-content: center;
     margin-top: 400px;
   }
   .container {
-    background-color: #7786f5;
+    background-image: url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80);
     position: absolute;
     width: 100%;
     height: 100%;
@@ -20,6 +19,7 @@
     justify-content: center;
     flex-direction: column;
     top: 0;
+    
   }
   #start {
     font-size: 1.2em;
@@ -34,9 +34,24 @@
   .correct{
     background-color: #09f157;
   }
+  #Right{
+    position: relative;
+    top:250px;
+    background-color: #09ff3e;
+    border-radius: 2em;
+    padding: 20px;
+  }
+  #Wrong{
+    position: relative;
+    top:250px;
+    left:300px;
+    background-color: #ff0909;
+    border-radius: 2em;
+    padding: 20px;
+    color: #f1eeee;
+  }
   .button-grid {
    border-color: #2532f0;
-   border-radius: 20px;
    border-style: dotted;
    justify-content: center;
    align-items: center;
@@ -51,22 +66,30 @@
   background-color: #cc15ae;
   border-radius: 2em;
   cursor: pointer;
+  color: aliceblue;
  }
   #question {
     font-size: 1.2em;
     padding: 1em 3em;
-    background-color: #e01a1a;
-    border: none;
-    outline: none;
-    border-radius: 2em;
+    max-width: 600px;
+    background-image:url(https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80) ;
+   color: #ffffff;
+   border-top-right-radius: 20px;
+   border-top-left-radius:20px ;
+  
+  
   }
   #answer-buttons {
     font-size: 1.2em;
     padding: 1em 3em;
-    background-color: #d31414;
+    background-color: #a5a2a2;
     border: none;
     outline: none;
-    border-radius: 2em;
+    border-radius: 5px;
+    border-bottom-left-radius: 20px ;
+    border-bottom-right-radius:20px ;
+    display: block;
+
   }
  #timer {
   position:relative;
@@ -75,7 +98,7 @@
   font-size: 1.2em;
   color: aliceblue;
   padding: 1em 3em;
-  background-color: #09f157;
+  background-color: #069235;
   border-radius: 2em;
   
  }
@@ -99,7 +122,23 @@
   list-style: decimal;
   
 }
-  
+ .btn{
+  margin: 20px;
+  padding:5px ;
+  min-width: 30px;
+  border-radius: 10px;
+  background-color: #2106bb;
+  color: aliceblue;
+  font-style: bold;
+ } 
   .hide {
     display: none;
+  }
+  #instructions{
+    
+    font-size: 1.2em;
+    color: aliceblue;
+    padding: 1em 3em;
+    background-color: #2106bb;
+    border-radius: 2em;
   }
